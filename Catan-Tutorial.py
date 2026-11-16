@@ -11,3 +11,5 @@ how_to_play_catan_loop()
     print ("Welcome Catan player!")
     if (input("Do you want to learn how to play Catan? (yes/no): ").lower() == "yes"):
         print("Great! Let's learn how to play Catan.")
+
+        

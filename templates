@@ -1,0 +1,6 @@
+templates/
+    learn.html
+    resources.html
+    board.html
+    turns.html
+    building.html
