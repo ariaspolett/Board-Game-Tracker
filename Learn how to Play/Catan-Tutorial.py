@@ -3,7 +3,7 @@
 
 """
 Priority of tasks
-1. Tracking wins, points, final board pic
+1. Tracking wins, points, final board pic (This is a possibility and a huge strech :,))
 2.Teach ppl how to play a new board game
 """
 
