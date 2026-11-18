@@ -1,65 +1,76 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+:root {
+    /* Catan resource colors */
+    --brick:  #b5482f;
+    --wood:   #2f6b3a;
+    --wheat:  #e8b93c;
+    --sheep:  #8fcf6a;
+    --ore:    #7d8590;
+    --sea:    #375792;
+    --sand:   #f0d9a0;
+    --ink:    #2b1d0e;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #375792;
+/* Hex tile background pattern (tessellating, pointy-top) */
+.hex-bg {
+    background-color: var(--sea);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100' fill='none' stroke='%23ffffff' stroke-opacity='0.10' stroke-width='2'/%3E%3Cpath d='M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34' fill='none' stroke='%23ffffff' stroke-opacity='0.10' stroke-width='2'/%3E%3C/svg%3E");
+    background-size: 56px 100px;
 }
 
-h1.ui-title {
-    text-align: center;
-    color: #ff9430;
-    font-size: 3.5rem;
-    margin-bottom: 3rem;
-    font-family: 'EB Garamond', serif;
-    justify-content: center;
-}
-
-.ui-container {
+/* Spacing: lay buttons out in a row with a consistent gap */
+.hex-nav {
     display: flex;
+    flex-wrap: wrap;          /* stacks on small screens */
     justify-content: center;
+    gap: 1.5rem;              /* this is your spacing control */
+    margin-top: 2rem;
+}
+
+/* Hexagonal button */
+.hex-btn {
+    --hex-fill: var(--wood);
+    --hex-border: var(--wheat);
+    --border-w: 4px;
+
+    position: relative;
+    display: inline-flex;
     align-items: center;
-    
-    min-height: 100vh;
-    padding: 1rem;
-    flex-direction: column;
-}
-
-.card {
-    background-color: #003392;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 1rem 2rem;
+    justify-content: center;
+    min-width: 220px;
+    height: 80px;
+    padding: 0 2.5rem;
+    text-decoration: none;
     text-align: center;
-    max-width: 400px;
-    width: 100%;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    color: var(--sand);
+    background: var(--hex-border);   /* acts as the outline */
+    /* flat-top hexagon stretched wide so text fits */
+    clip-path: polygon(12% 0, 88% 0, 100% 50%, 88% 100%, 12% 100%, 0 50%);
+    transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-.card-text {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
-    color: #ff9430;
-    font-family: 'Cinzel', sans-serif;
+/* Inner hexagon sits inside the outline */
+.hex-btn::before {
+    content: "";
+    position: absolute;
+    inset: var(--border-w);
+    background: var(--hex-fill);
+    clip-path: polygon(12% 0, 88% 0, 100% 50%, 88% 100%, 12% 100%, 0 50%);
+    z-index: 0;
+    transition: background 0.2s ease;
 }
 
-
-.btn-primary {
-    background-color: #4269b1;
-    color: #ff9430;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-    font-family: 'Cinzel', sans-serif;
-    margin-bottom: 1rem;
+/* Keep text above the ::before layer */
+.hex-btn > * , .hex-btn {
+    z-index: 1;
 }
 
-.btn-primary:hover {
-    background-color: #7b1fa2;
+.hex-btn:hover {
+    transform: translateY(-3px) scale(1.04);
 }
+.hex-btn:hover::before {
+    background: var(--brick);
+}
+
+.hex-btn--alt { --hex-fill: var(--ore); }
