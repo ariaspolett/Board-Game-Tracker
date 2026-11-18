@@ -45,6 +45,12 @@ h1.ui-title {
     font-family: 'Cinzel', sans-serif;
 }
 
+.btn {
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-bottom: 1rem;
+}
+
 .btn-primary {
     background-color: #4269b1;
     color: #ff9430;
