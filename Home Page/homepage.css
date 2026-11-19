@@ -42,9 +42,11 @@ h1.ui-title {
 .card-text {
     font-size: 1rem;
     margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
     font-size: 1.1rem;
     color: #ff9430;
     font-family: 'Cinzel', sans-serif;
+    text-align: center
 }
 
 
