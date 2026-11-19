@@ -3,10 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../Tracker/pasttracked.js" defer></script>
-    <title>Document</title>
+    <title>Past Games</title>
+    <link rel="stylesheet" href="../shared.css">
+    <link rel="stylesheet" href="tracking.css">
+    <link rel="stylesheet" href="pasttracked.css">
 </head>
 <body>
-    <h1>Past Tracked Games</h1>
+<main class="page">
+    <h1>Past Games</h1>
+
+    <section class="info-card">
+        <h3>Check a player</h3>
+        <label>Player: <select id="playerSelect"></select></label>
+        <p id="playerStats" class="big-stat"></p>
+    </section>
+
+    <h2>Leaderboard</h2>
+    <table class="cost-table">
+        <thead><tr><th>Player</th><th>Played</th><th>Won</th><th>Win rate</th></tr></thead>
+        <tbody id="leaderboard"></tbody>
+    </table>
+
+    <h2>History</h2>
+    <div id="history"></div>
+
+    <section class="info-card">
+        <h3>Backup and share</h3>
+        <div class="row">
+            <button type="button" id="exportBtn" class="hex-btn hex-btn--ore"><span>Export</span></button>
+            <button type="button" id="importBtn" class="hex-btn hex-btn--sea"><span>Import</span></button>
+            <input type="file" id="importFile" accept=".json" hidden>
+        </div>
+        <p id="backupMsg"></p>
+    </section>
+
+    <nav class="hex-nav">
+        <a href="tracking.html" class="hex-btn hex-btn--wheat"><span>Current Game</span></a>
+        <a href="../Basic UI/ui.html" class="hex-btn hex-btn--alt"><span>Home</span></a>
+    </nav>
+</main>
+<script src="storage.js"></script>
+<script src="pasttracked.js"></script>
 </body>
 </html>
