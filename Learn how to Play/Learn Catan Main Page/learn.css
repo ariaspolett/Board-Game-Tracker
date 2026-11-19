@@ -43,3 +43,19 @@ a {
     font-family: serif;
     margin-bottom: 1rem;
 }
+
+.subtitle { 
+    font-size: 1.2rem; 
+    margin-bottom: 2rem; 
+}
+
+.rules-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto 2rem;
+}
+
+.back-row { margin-top: 2rem; }
