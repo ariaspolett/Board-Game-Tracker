@@ -19,6 +19,33 @@ h1 {
     justify-content: center;
 }
 
+h2{
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+h3{
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+
+td{
+    padding: 0.5rem;
+    border: 1px solid #ff5e00;
+}
+
+.cost-table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+.top {
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
 .btn{
     background-color: #4269b1;
     color: #f0aa6d;
@@ -33,3 +60,11 @@ h1 {
 }
 
 .back-row { margin-top: 2rem; justify-content: center; display: flex; }
+
+.hex-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
