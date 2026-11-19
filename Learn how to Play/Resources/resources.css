@@ -56,6 +56,20 @@ td{
     transition: background-color 0.3s ease;
     font-family: serif;
     margin-bottom: 1rem;
+    margin-top: 1rem;
+    justify-content: center;
+}
+
+.hex-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.sources {
+    margin-top: 2rem;
 }
 
 .back-row { margin-top: 2rem; justify-content: center; display: flex; }
