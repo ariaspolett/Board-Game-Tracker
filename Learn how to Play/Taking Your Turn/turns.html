@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,5 +17,74 @@
     <div class="back-row">
         <a href="/Home Page/homepage.html" class="btn">Back to Home</a>
     </div>
+</body>
+</html>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Taking Your Turn</title>
+    <link rel="stylesheet" href="../shared.css">
+    <link rel="stylesheet" href="learn.css">
+</head>
+<body>
+<main class="page">
+    <h1>Taking Your Turn</h1>
+    <p>Every turn has three steps, always in this order. First to <b>10 victory points</b> on their own turn wins.</p>
+
+    <h2>1. Roll for resources</h2>
+    <div class="info-card">
+        <p>Roll both dice. Every tile showing that number pays out to each player with a settlement (1 card) or city (2 cards) touching it.</p>
+        <h3>Rolled a 7?</h3>
+        <p>Nobody collects. Instead, move the robber to any tile. That tile stops producing while the robber sits on it. Players holding more than seven cards also have to discard half of them.</p>
+    </div>
+
+    <h2>2. Trade</h2>
+    <div class="card-grid">
+        <div class="info-card"><h3>With players</h3><p>Negotiate swaps with anyone. On your turn, others can only trade with you.</p></div>
+        <div class="info-card"><h3>With the bank</h3><p>Hand in four of one resource for one of your choice, or get a better rate through a harbor.</p></div>
+    </div>
+
+    <h2>3. Build</h2>
+    <p>Spend resources on roads, settlements, cities, or development cards, as many as you can afford.</p>
+
+    <h2>Development cards</h2>
+    <table class="cost-table">
+        <tr><th>Type</th><th>Count</th><th>What it does</th></tr>
+        <tr><td>Knight</td><td>14</td><td>Move the robber. Collecting 3 knights can earn Largest Army.</td></tr>
+        <tr><td>Progress</td><td>6</td><td>One-time bonus effects, then it's discarded.</td></tr>
+        <tr><td>Victory point</td><td>5</td><td>Worth 1 point. Keep it hidden until you win.</td></tr>
+    </table>
+    <p>You can't play a card the same turn you bought it (victory point cards are the exception), and you usually play one development card per turn.</p>
+
+    <h2>How points add up</h2>
+    <table class="cost-table">
+        <tr><th>Source</th><th>Points</th></tr>
+        <tr><td>Settlement</td><td>1 each</td></tr>
+        <tr><td>City</td><td>2 each</td></tr>
+        <tr><td>Victory point card</td><td>1 each</td></tr>
+        <tr><td>Longest Road (5+ connected roads)</td><td>2</td></tr>
+        <tr><td>Largest Army (3+ knights played)</td><td>2</td></tr>
+    </table>
+    <p>Longest Road and Largest Army can change hands when someone beats the current holder.</p>
+
+    <section class="sources">
+        <h2>Read more</h2>
+        <div class="card-grid">
+            <a class="info-card" href="https://www.wargamer.com/catan/how-to-play-catan" target="_blank" rel="noopener">
+                <h3>Wargamer: How to Play Catan</h3><p>Turn phases, scoring, and winning tips.</p>
+            </a>
+            <a class="info-card" href="https://www.wikihow.com/Play-Settlers-of-Catan" target="_blank" rel="noopener">
+                <h3>wikiHow: Play Settlers of Catan</h3><p>A step-by-step walkthrough.</p>
+            </a>
+        </div>
+    </section>
+
+    <div class="hex-nav">
+        <a href="learn.html" class="hex-btn hex-btn--alt"><span>Back to Learn</span></a>
+    </div>
+</main>
 </body>
 </html>
