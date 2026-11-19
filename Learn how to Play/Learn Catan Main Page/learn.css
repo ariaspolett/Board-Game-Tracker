@@ -1,7 +1,7 @@
 
 /* Learn Catan page */
 
-body {
+body { color: var(--ink);
     background-color: #f0aa6d;
     color: #518095;
     font-family: Georgia, serif;
@@ -9,6 +9,11 @@ body {
     padding: 0;
     text-align: center;
 }
+
+.page { max-width: 900px; margin: 0 auto; padding: 0 1rem 3rem; text-align: left; }
+.page h1 { text-align: center; color: var(--sea); }
+.page h2 { color: var(--ink); margin: 2rem 0 0.75rem; }
+.page p, .page li { line-height: 1.6; font-size: 1.05rem; }
 
 /* Main heading */
 h1 {
@@ -61,12 +66,7 @@ a {
 .back-row { margin-top: 2rem; }
 
 /* Claude Code */
-body { color: var(--ink); }
 
-.page { max-width: 900px; margin: 0 auto; padding: 0 1rem 3rem; text-align: left; }
-.page h1 { text-align: center; color: var(--sea); }
-.page h2 { color: var(--ink); margin: 2rem 0 0.75rem; }
-.page p, .page li { line-height: 1.6; font-size: 1.05rem; }
 
 .info-card {
     background: var(--wood);
