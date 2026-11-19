@@ -1,3 +1,5 @@
+<!--
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,5 +18,79 @@
     <div class="back-row">
         <a href="/Home Page/homepage.html" class="btn">Back to Home</a>
     </div>
+</body>
+</html>
+-->
+
+<!-- Claude -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Understanding the Board</title>
+    <link rel="stylesheet" href="../shared.css">
+    <link rel="stylesheet" href="learn.css">
+</head>
+<body>
+<main class="page">
+    <h1>Understanding the Board</h1>
+    <p>The Catan board is an island of hexagonal tiles surrounded by a frame of sea pieces. It's different every game if you set it up randomly.</p>
+
+    <h2>Terrain tiles</h2>
+    <p>There are 19 land tiles. Each one produces a resource when its number is rolled.</p>
+    <table class="cost-table">
+        <tr><th>Terrain</th><th>Produces</th></tr>
+        <tr><td>Hills</td><td>Brick</td></tr>
+        <tr><td>Forest</td><td>Lumber</td></tr>
+        <tr><td>Pasture</td><td>Wool</td></tr>
+        <tr><td>Fields</td><td>Grain</td></tr>
+        <tr><td>Mountains</td><td>Ore</td></tr>
+        <tr><td>Desert</td><td>Nothing (the robber starts here)</td></tr>
+    </table>
+
+    <h2>Number tokens</h2>
+    <div class="info-card">
+        <p>Each tile (except the desert) has a number from 2 to 12. When the dice total matches, the tile pays out. The dots under each number show how likely it is: <b>6 and 8 come up the most</b>, while 2 and 12 are rare. Build next to tiles with lots of dots to get more resources.</p>
+    </div>
+
+    <h2>Harbors</h2>
+    <div class="info-card">
+        <p>Harbors sit on the sea frame. Without one, you can swap four of the same resource for one of another kind. If you own a settlement or city on a harbor, your rate improves, down to as low as two for one with a matching resource harbor.</p>
+    </div>
+
+    <h2>Where you can build</h2>
+    <div class="card-grid">
+        <div class="info-card"><h3>Roads</h3><p>Go on the edges between tiles and must connect to your own roads or buildings.</p></div>
+        <div class="info-card"><h3>Settlements and cities</h3><p>Go on the corners where tiles meet. A new settlement must connect to your road and sit at least two road spaces from any other settlement.</p></div>
+    </div>
+
+    <h2>First-game setup</h2>
+    <div class="info-card">
+        <ul>
+            <li>Join the sea pieces into a frame, then fill it with the 19 land tiles.</li>
+            <li>Place the number tokens, and put the robber on the desert.</li>
+            <li>Each player picks a color and takes their roads, settlements, and cities.</li>
+            <li>Players place two settlements and two roads, and the second round is placed in reverse turn order.</li>
+            <li>Your second settlement gives you a starting card from each tile it touches.</li>
+        </ul>
+        <p>For a beginner game, use the fixed layout shown in the rulebook instead of a random one.</p>
+    </div>
+
+    <section class="sources">
+        <h2>Read more</h2>
+        <div class="card-grid">
+            <a class="info-card" href="https://www.wargamer.com/catan/how-to-play-catan" target="_blank" rel="noopener">
+                <h3>Wargamer: How to Play Catan</h3><p>Setup photos and a beginner layout.</p>
+            </a>
+            <a class="info-card" href="https://www.catan.com/sites/default/files/2021-06/catan_base_rules_2020_200707.pdf" target="_blank" rel="noopener">
+                <h3>Official Rulebook (PDF)</h3><p>The complete rules from the publisher.</p>
+            </a>
+        </div>
+    </section>
+
+    <div class="hex-nav">
+        <a href="learn.html" class="hex-btn hex-btn--alt"><span>Back to Learn</span></a>
+    </div>
+</main>
 </body>
 </html>
