@@ -1,102 +1,14 @@
-
-/* Learn Catan page */
-
-body { color: var(--ink);
-    background-color: #f0aa6d;
-    color: #518095;
-    font-family: Georgia, serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
-.page { max-width: 900px; margin: 0 auto; padding: 0 1rem 3rem; text-align: left; }
-.page h1 { text-align: center; color: var(--sea); }
-.page h2 { color: var(--ink); margin: 2rem 0 0.75rem; }
-.page p, .page li { line-height: 1.6; font-size: 1.05rem; }
-
-/* Main heading */
 h1 {
-    color: #65b7e6;
-    font-size: 3rem;
-    margin-top: 70px;
-    margin-bottom: 15px;
-    letter-spacing: 2px;
+    color: #ff9430;
+    font-size: 3.5rem;
+    text-align: center;
+    margin: 2rem 0 1rem;
+    font-family: 'EB Garamond', serif;
 }
 
-a {
-    display: inline-block;
-    margin: 20px;
-    padding: 10px 20px;
-    background-color: #4269b1;
-    color: #f0aa6d;
-    text-decoration: none;
-    font-family: serif;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.btn{
-    background-color: #4269b1;
-    color: #f0aa6d;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-    font-family: serif;
-    margin-bottom: 1rem;
-}
-
-.subtitle { 
-    font-size: 1.2rem; 
-    margin-bottom: 2rem; 
-}
-
-.rules-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
-    max-width: 900px;
-    margin: 0 auto 2rem;
-}
-
-.back-row { margin-top: 2rem; }
-
-/* Claude Code */
-
-
-.info-card {
-    background: var(--wood);
+.subtitle {
     color: var(--sand);
-    border: 4px solid var(--wheat);
-    border-radius: 12px;
-    padding: 1.2rem 1.5rem;
-    margin: 1rem 0;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
 }
-.info-card h3 { color: var(--wheat); font-family: 'Cinzel', serif; margin-bottom: 0.4rem; }
-.info-card ul { padding-left: 1.2rem; }
-
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1rem;
-}
-
-/* resource color accents */
-.res-brick { background: var(--brick); }
-.res-wood  { background: var(--wood); }
-.res-wheat { background: var(--wheat); color: var(--ink); }
-.res-wheat h3 { color: var(--ink); }
-.res-sheep { background: var(--sheep); color: var(--ink); }
-.res-sheep h3 { color: var(--ink); }
-.res-ore   { background: var(--ore); }
-
-table.cost-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-.cost-table th, .cost-table td { padding: 0.6rem; border: 2px solid var(--wheat); text-align: left; }
-.cost-table th { background: var(--sea); color: var(--sand); }
-.cost-table td { background: var(--sand); }
-
-.sources { margin-top: 3rem; }
