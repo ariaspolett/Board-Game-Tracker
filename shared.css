@@ -1,3 +1,5 @@
+
+
 /* shared.css - Catan palette + animated hexagon buttons.
    Link this on EVERY page, before the page's own CSS:
        <link rel="stylesheet" href="../shared.css">
@@ -154,3 +156,4 @@
     .hex-btn::before,
     .hex-btn:hover::after { transition: none; }
 }
+
