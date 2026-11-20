@@ -22,7 +22,7 @@ function renderPlayerStats() {
     out.textContent = name + ": " + s.wins + " won out of " + s.played + " played";
 }
 
-function renderLeaderboard() {
+/*function renderLeaderboard() {
     const stats = getStats(players, games);
     const rows = Object.entries(stats).sort((a, b) => b[1].wins - a[1].wins || b[1].played - a[1].played);
     const body = document.getElementById("leaderboard");
@@ -33,7 +33,43 @@ function renderLeaderboard() {
         [name, s.played, s.wins, rate].forEach(v => tr.appendChild(el("td", String(v))));
         body.appendChild(tr);
     });
+}*/
+
+function renderLeaderboard() {
+    const stats = getStats(players, games);
+    const rows = Object.entries(stats).sort((a, b) => b[1].wins - a[1].wins || b[1].played - a[1].played);
+    const body = document.getElementById("leaderboard");
+    body.innerHTML = "";
+
+    rows.forEach(([name, s]) => {
+        const tr = document.createElement("tr");
+        const rate = s.played ? Math.round((s.wins / s.played) * 100) + "%" : "-";
+        [name, s.played, s.wins, rate].forEach(v => tr.appendChild(el("td", String(v))));
+
+        // Delete button cell
+        const actionTd = document.createElement("td");
+        const delBtn = el("button", "Remove", "small-btn");
+        delBtn.type = "button";
+        delBtn.addEventListener("click", () => {
+            if (!confirm(`Remove ${name} from the leaderboard?`)) return;
+
+            // 1. Remove from saved player list
+            players = players.filter(p => p.toLowerCase() !== name.toLowerCase());
+            save("catan.players", players);
+
+            // 2. Remove their scores from saved games so getStats() doesn't re-add them
+            games.forEach(g => { delete g.scores[name]; });
+            save("catan.games", games);
+
+            renderAll();
+        });
+        actionTd.appendChild(delBtn);
+        tr.appendChild(actionTd);
+
+        body.appendChild(tr);
+    });
 }
+
 
 function renderHistory() {
     const box = document.getElementById("history");
