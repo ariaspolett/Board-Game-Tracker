@@ -1,106 +1,92 @@
-<!--
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="resources.css">
-
-</head>
-<body>
-    <h1>Resource Page</h1>
-
-
-    <div class="back-row">
-        <button class="btn" onclick="history.back()"><span>Go Back</span></button>
-    </div>
-
-    <div class="back-row">
-        <a href="/Home Page/homepage.html" class="btn">Back to Home</a>
-    </div>
-
-</body>
-</html>
-
--->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
     <title>Catan Resources</title>
-    <link rel="stylesheet" href="../shared.css">
+    <link rel="stylesheet" href="../../shared.css">
     <link rel="stylesheet" href="resources.css">
 </head>
-
-
-
 <body>
-<main class="page">
-    <h1>Resources</h1>
-        <p>Everything you build in Catan is paid for with five resource types. Which ones you collect shapes your whole strategy.</p>
+    <main class="page">
+        <h1>Catan Resources</h1>
 
-    <div class="card-grid">
-        <div class="info-card res-brick">
-            <h3>Brick</h3>
-            <p>Comes from hills. Used for roads and settlements, so it matters most early on.</p>
+        <div class="info-card">
+            <p>In Catan, there are 5 main resources used to build roads, settlements, cities, and development cards. Each tile on the board produces a specific resource when its number is rolled.</p>
         </div>
-        <div class="info-card res-wood">
-            <h3>Lumber</h3>
-            <p>Comes from forests. Pairs with brick for roads and settlements.</p>
-        </div>
-        <div class="info-card res-wheat">
-            <h3>Grain</h3>
-            <p>Comes from fields. Needed for settlements, cities, and development cards, so it's useful all game long.</p>
-        </div>
-        <div class="info-card res-sheep">
-            <h3>Wool</h3>
-            <p>Comes from pastures. Goes into settlements and development cards, and it's a good trade item if you have extra.</p>
-        </div>
-        <div class="info-card res-ore">
-            <h3>Ore</h3>
-            <p>Comes from mountains. The key to upgrading to cities and buying development cards.</p>
-        </div>
-    </div>
 
-    <h2>What things cost</h2>
-    <table class="cost-table">
-        <tr><th>Item</th><th>Cost</th><th>Victory points</th></tr>
-        <tr><td>Road</td><td>1 brick, 1 lumber</td><td>0</td></tr>
-        <tr><td>Settlement</td><td>1 brick, 1 lumber, 1 wool, 1 grain</td><td>1</td></tr>
-        <tr><td>City</td><td>3 ore, 2 grain</td><td>2</td></tr>
-        <tr><td>Development card</td><td>1 ore, 1 grain, 1 wool</td><td>varies</td></tr>
-    </table>
-
-    <h2>Resource tips</h2>
-    <div class="info-card">
-        <ul class="tips-list">
-            <li>Try to touch at least three different resource types with your starting settlements.</li>
-            <li>If one resource is rare on the board, claim it early or be ready to trade for it.</li>
-            <li>Brick and lumber drive early expansion; ore and grain drive the late game.</li>
-            <li>Harbors make extra resources more valuable, since they improve your trade rates.</li>
-        </ul>
-    </div>
-
-    <section class="sources">
-        <h2>Read more</h2>
+        <h2>The 5 Resources</h2>
         <div class="card-grid">
-            <a class="info-card" href="https://www.playiro.com/articles/understanding-catan-resources-what-they-do-and-how-to-use-them" target="_blank" rel="noopener">
-                <h3>Playiro: Understanding Resources</h3><p>A deeper look at each resource and when it matters.</p>
-            </a>
+            <div class="info-card res-brick">
+                <h3>Brick</h3>
+                <p>Produced by Hills tiles. Used for building roads and settlements.</p>
+            </div>
+            <div class="info-card res-wood">
+                <h3>Lumber (Wood)</h3>
+                <p>Produced by Forest tiles. Used for building roads and settlements.</p>
+            </div>
+            <div class="info-card res-wheat">
+                <h3>Grain (Wheat)</h3>
+                <p>Produced by Fields tiles. Used for settlements, cities, and development cards.</p>
+            </div>
+            <div class="info-card res-sheep">
+                <h3>Wool (Sheep)</h3>
+                <p>Produced by Pasture tiles. Used for settlements and development cards.</p>
+            </div>
+            <div class="info-card res-ore">
+                <h3>Ore</h3>
+                <p>Produced by Mountains tiles. Used for upgrading cities and buying development cards.</p>
+            </div>
         </div>
-    </section>
 
-            <a href="../Learn Catan Main Page/learn.html" class="hex-btn hex-btn--sea">
-                <span>Back to Learn</span>
-            </a>
+        <h2>Building Costs</h2>
+        <table class="cost-table">
+            <thead>
+                <tr>
+                    <th>Structure / Card</th>
+                    <th>Required Resources</th>
+                    <th>Victory Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Road</td>
+                    <td>1 Brick + 1 Lumber</td>
+                    <td>0 (2 pts for Longest Road)</td>
+                </tr>
+                <tr>
+                    <td>Settlement</td>
+                    <td>1 Brick + 1 Lumber + 1 Grain + 1 Wool</td>
+                    <td>1 VP</td>
+                </tr>
+                <tr>
+                    <td>City (Upgrade)</td>
+                    <td>3 Ore + 2 Grain</td>
+                    <td>2 VP</td>
+                </tr>
+                <tr>
+                    <td>Development Card</td>
+                    <td>1 Ore + 1 Grain + 1 Wool</td>
+                    <td>Varies (1 VP cards)</td>
+                </tr>
+            </tbody>
+        </table>
 
-            <a href="../../Home Page/homepage.html" class="hex-btn hex-btn--wood">
-                <span>Back to Home</span>
-            </a>
-</main>
-<script src="../hexbg.js"></script>
+        <div class="info-card">
+            <h3>Resource Tips</h3>
+            <ul class="tips-list">
+                <li>Place starting settlements next to tiles with high-probability numbers (6 and 8).</li>
+                <li>Aim for resource diversity early so you aren't stuck waiting on trades.</li>
+                <li>Watch your hand size—rolling a 7 forces anyone with more than 7 cards to discard half!</li>
+            </ul>
+        </div>
+
+        <nav class="hex-nav">
+            <a href="../Learn Catan Main Page/learn.html" class="hex-btn hex-btn--sea"><span>Back to Learn</span></a>
+            <a href="../../Home Page/homepage.html" class="hex-btn hex-btn--wood"><span>Back to Home</span></a>
+        </nav>
+    </main>
+
+    <script src="../../hexbg.js"></script>
 </body>
 </html>
