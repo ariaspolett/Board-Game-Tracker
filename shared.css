@@ -1,0 +1,156 @@
+/* shared.css - Catan palette + animated hexagon buttons.
+   Link this on EVERY page, before the page's own CSS:
+       <link rel="stylesheet" href="../shared.css">
+   (use "shared.css" with no "../" for a page in the project root) */
+
+:root {
+    --brick: #b5482f;
+    --wood:  #2f6b3a;
+    --wheat: #e8b93c;
+    --sheep: #8fcf6a;
+    --ore:   #7d8590;
+    --sea:   #375792;
+    --sand:  #f0d9a0;
+    --ink:   #2b1d0e;
+}
+
+/* ---------- Animated background layer (made by hexbg.js) ---------- */
+#hex-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* ---------- Hexagon button ---------- */
+.hex-btn {
+    --hex-fill: var(--wood);       /* inside color */
+    --hex-hover: var(--brick);     /* inside color on hover */
+    --hex-border: var(--wheat);    /* outline color */
+    --border-w: 4px;
+    --hex-shape: polygon(12% 0, 88% 0, 100% 50%, 88% 100%, 12% 100%, 0 50%);
+
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 220px;
+    min-height: 80px;
+    padding: 0.5rem 3rem;
+    margin: 0;
+    border: none;
+    appearance: none;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--sand);
+
+    background: var(--hex-border);          /* shows as the outline */
+    clip-path: var(--hex-shape);
+    transition: transform 0.2s ease;
+}
+
+/* inner hexagon, inset by the border width */
+.hex-btn::before {
+    content: "";
+    position: absolute;
+    inset: var(--border-w);
+    background: var(--hex-fill);
+    clip-path: var(--hex-shape);
+    transition: background 0.25s ease;
+}
+
+/* light streak that sweeps across on hover */
+.hex-btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg, transparent 40%, rgba(255, 255, 255, 0.38) 50%, transparent 60%);
+    transform: translateX(-130%);
+}
+
+/* the label sits above both layers */
+.hex-btn span {
+    position: relative;
+    z-index: 1;
+}
+
+.hex-btn:hover {
+    transform: scale(1.05);
+}
+.hex-btn:hover::before {
+    background: var(--hex-hover);
+}
+.hex-btn:hover::after {
+    transform: translateX(130%);
+    transition: transform 0.7s ease;
+}
+.hex-btn:active {
+    transform: scale(0.97);
+}
+
+/* clip-path hides normal focus outlines, so show focus with a bright thick border */
+.hex-btn:focus-visible {
+    outline: none;
+    --hex-border: #ff9430;
+    --border-w: 7px;
+}
+
+/* ---------- Color variants ---------- */
+.hex-btn--wood  { --hex-fill: var(--wood);  --hex-hover: #3d8a4a; }
+.hex-btn--brick { --hex-fill: var(--brick); --hex-hover: #d0603f; }
+.hex-btn--ore   { --hex-fill: var(--ore);   --hex-hover: #99a1ab; }
+.hex-btn--sea   { --hex-fill: #4269b1;      --hex-hover: #5a82cc; }
+.hex-btn--alt   { --hex-fill: var(--ore);   --hex-hover: #99a1ab; }
+.hex-btn--wheat { --hex-fill: var(--wheat); --hex-hover: #f5cf63; color: var(--ink); }
+.hex-btn--sheep { --hex-fill: var(--sheep); --hex-hover: #a8e285; color: var(--ink); }
+
+/* ---------- Tall tile (real Catan shape), for icon-style buttons ---------- */
+.hex-btn--tile {
+    --hex-shape: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+    width: 160px;
+    height: 180px;
+    min-width: 0;
+    padding: 1rem;
+}
+
+/* ---------- Layout: spaces buttons evenly ---------- */
+.hex-nav,
+.rules-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem auto 0;
+}
+
+/* buttons in a row drift gently, each on its own beat.
+   "translate" is separate from "transform", so it never fights the hover zoom */
+@keyframes hex-bob {
+    0%, 100% { translate: 0 0; }
+    50%      { translate: 0 -6px; }
+}
+.hex-nav .hex-btn,
+.rules-container .hex-btn {
+    animation: hex-bob 4.5s ease-in-out infinite;
+}
+.hex-nav .hex-btn:nth-child(2n),
+.rules-container .hex-btn:nth-child(2n) { animation-delay: -1.5s; }
+.hex-nav .hex-btn:nth-child(3n),
+.rules-container .hex-btn:nth-child(3n) { animation-delay: -3s; }
+
+@media (max-width: 520px) {
+    .hex-btn { min-width: 180px; padding: 0.5rem 2.2rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hex-nav .hex-btn,
+    .rules-container .hex-btn { animation: none; }
+    .hex-btn,
+    .hex-btn::before,
+    .hex-btn:hover::after { transition: none; }
+}
