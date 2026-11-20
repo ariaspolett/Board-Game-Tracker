@@ -121,3 +121,27 @@ document.getElementById("resetBtn").addEventListener("click", () => {
 
 render();
 
+// ---------- 2d6 Catan Dice Roller ----------
+const DICE_FACES = ["", "⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
+
+const rollBtn = document.getElementById("rollDiceBtn");
+if (rollBtn) {
+    rollBtn.addEventListener("click", () => {
+        const d1 = Math.floor(Math.random() * 6) + 1;
+        const d2 = Math.floor(Math.random() * 6) + 1;
+        const sum = d1 + d2;
+
+        const displayEl = document.getElementById("diceDisplay");
+        const totalEl = document.getElementById("diceTotal");
+
+        if (displayEl) {
+            displayEl.textContent = `${DICE_FACES[d1]}  ${DICE_FACES[d2]}`;
+        }
+        if (totalEl) {
+            totalEl.textContent = sum === 7
+                ? "Rolled 7 — Move the Robber! (7+ cards discard half)"
+                : `Rolled ${sum}! Collect resources on ${sum}.`;
+            totalEl.style.color = sum === 7 ? "#ff9430" : "#f0d9a0";
+        }
+    });
+}
