@@ -1,3 +1,35 @@
+/* Put this at Line 1 of shared.css */
+@import url('https://googleapis.com');
+
+body {
+    background-color: var(--sea);
+    color: var(--sand);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    position: relative;
+    z-index: 0;
+}
+
+h1 {
+    font-family: 'EB Garamond', Georgia, serif;
+    color: #ff9430;
+    font-size: 3.2rem;
+    text-align: center;
+    margin: 2rem 0 1.5rem;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-family: 'Cinzel', Georgia, serif;
+    color: var(--wheat);
+    font-size: 1.6rem;
+    margin: 2rem 0 0.75rem;
+    border-bottom: 2px solid rgba(232, 185, 60, 0.35);
+    padding-bottom: 0.3rem;
+}
+
+
 /* shared.css - Unified Catan palette, animated hex background, & universal hex buttons */
 
 :root {
