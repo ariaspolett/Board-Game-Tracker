@@ -19,10 +19,13 @@ body {
 }
 
 #hex-bg {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none; /* ensures background never blocks button clicks */
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1 !important;
+    pointer-events: none;
 }
 
 /* ---------- Universal Hexagon Button (applies to .hex-btn, .btn, .btn-primary, and button) ---------- */
