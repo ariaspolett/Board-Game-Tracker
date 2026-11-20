@@ -1,4 +1,67 @@
-<!-- Claude -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracking the Current Game</title>
+    <link rel="stylesheet" href="../shared.css">
+    <link rel="stylesheet" href="tracking.css">
+</head>
+<body>
+    <main class="page">
+        <h1>Tracking the Current Game</h1>
+
+        <section class="info-card">
+            <h3>Dice Roller</h3>
+            <div id="diceDisplay" style="font-size: 2.5rem; margin: 0.5rem 0;">🎲 🎲</div>
+            <p id="diceTotal" style="margin-bottom: 0.75rem; font-weight: bold;">Roll to start the turn!</p>
+            <button type="button" id="rollDiceBtn" class="hex-btn hex-btn--brick">
+                <span>Roll 2d6</span>
+            </button>
+        </section>
+
+        <section class="info-card">
+            <h3>Who's playing?</h3>
+            <form id="addForm" class="row">
+                <input id="playerName" list="knownPlayers" placeholder="Player name" maxlength="20" required>
+                <datalist id="knownPlayers"></datalist>
+                <button type="submit" class="hex-btn hex-btn--sea"><span>Add</span></button>
+            </form>
+            <p id="addMsg" class="error"></p>
+        </section>
+
+        <section class="info-card">
+            <h3>Scoreboard</h3>
+            <div id="scoreboard"></div>
+            <p id="emptyMsg">Add at least 2 players to start.</p>
+        </section>
+
+        <section class="info-card">
+            <h3>Finish the game</h3>
+            <p>The winner is the first player to reach 10 points on their turn.</p>
+            <label>Winner: <select id="winnerSelect"></select></label>
+            <p id="finishMsg" class="error"></p>
+            <div class="row">
+                <button type="button" id="finishBtn" class="hex-btn hex-btn--brick"><span>Finish game</span></button>
+                <button type="button" id="resetBtn" class="hex-btn hex-btn--ore"><span>Cancel game</span></button>
+            </div>
+        </section>
+
+        <nav class="hex-nav">
+            <a href="pasttracked.html" class="hex-btn hex-btn--wheat"><span>Past Games</span></a>
+            <a href="../Home Page/homepage.html" class="hex-btn hex-btn--wood"><span>Home</span></a>
+        </nav>
+    </main>
+
+    <script src="../hexbg.js"></script>
+    <script src="storage.js"></script>
+    <script src="tracking.js"></script>
+</body>
+</html>
+
+
+<!-- 
+
  <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +70,6 @@
     <title>Tracking the Current Game</title>
     <link rel="stylesheet" href="../shared.css">
     <link rel="stylesheet" href="tracking.css">
-    <script src="../Tracker/tracking.js" defer></script>
 </head>
 <body>
     <main class="page">
@@ -41,11 +103,13 @@
         </section>
 
     <nav class="hex-nav">
-        <a href="/Tracker/pasttracked.html" class="btn"><span>Past Games</span></a>
-        <a href="/Home Page/homepage.html" class="btn"><span>Home</span></a>
+        <a href="../Tracker/pasttracked.html" class="btn"><span>Past Games</span></a>
+        <a href="../Home Page/homepage.html" class="btn"><span>Home</span></a>
     </nav>
 </main>
-<script src="/Tracker/storage.js"></script>
-<script src="/Tracker/tracking.js"></script>
+<script src="../storage.js"></script>
+<script src="../tracking.js"></script>
 </body>
 </html>
+
+-->
